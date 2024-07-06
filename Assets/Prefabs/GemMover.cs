@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GemMover : MonoBehaviour
@@ -29,7 +30,24 @@ public class GemMover : MonoBehaviour
 
             //play âm thanh từ component đó
             audioSource.Play();
-            ScoreManager.AddScore(1);
+
+            if (gameObject.CompareTag("BlueGem"))
+            {
+                ScoreManager.AddScore(1);
+
+            }
+            else if (gameObject.CompareTag("GreenGem"))
+            {
+                ScoreManager.AddScore(2);
+
+            }
+            else if (gameObject.CompareTag("BlackGem"))
+            {
+                ScoreManager.AddScore(-1);
+
+            }
+
+            // Debug.Log(gameObject);
             // Debug.Log("viên ngọc đã va chạm với game object có nhãn player");
             Destroy(gameObject);
             // Debug.Log("đã xóa viên ngọc này ");
@@ -45,14 +63,10 @@ public class GemMover : MonoBehaviour
             Destroy(gameObject);
             // Debug.Log("đã xóa viên ngọc này");
         }
-
-
-
-
     }
 
-    public static void DestroyGem()
-    {
-        speed = 0;
-    }
+    // public static void DestroyGem()
+    // {
+    //     speed = 0;
+    // }
 }

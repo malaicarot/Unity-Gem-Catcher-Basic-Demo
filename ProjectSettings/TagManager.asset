@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - BackGround
+  - BlueGem
+  - GreenGem
+  - BlackGem
   layers:
   - Default
   - TransparentFX

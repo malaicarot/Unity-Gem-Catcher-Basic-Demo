@@ -3,8 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
+public enum gameState
+{
+    playing,
+    pause,
+    gameOver
+};
+
 public class ScoreManager : MonoBehaviour
 {
+
+    // Luu trang thai game
+
+    public gameState _gameState;
+
+
     // tạo một biến số điểm bắt đầu bằng 0 để lưu giá trị điểm của người chơi
     public static int score = 0; //static sẽ được giải thích sau trong chương c#
 
@@ -23,10 +37,10 @@ public class ScoreManager : MonoBehaviour
         score += amount; //tăng điểm theo giá trị của amount được truyền vào tại sự kiện gọi AddScore
     }
 
-
-
     void Start() // đếm giờ khi trò chơi bắt đầu
     {
+
+        _gameState = gameState.playing;
         remainingTime = 30f; //thời gian còn lại tại thời điểm bắt đầu bằng 30s (thời lượng của trò chơi)
         StartCoroutine(CountdownTimer());
         // là một phương thức nâng cao để gọi hàm CountdownTimer
@@ -57,10 +71,24 @@ public class ScoreManager : MonoBehaviour
 
     private void GameOver()
     {
+
         gameOverText.text = "Game Over!\nScore: " + score;
         gameOverPanel.SetActive(true);
 
-        GemMover.DestroyGem();
+
+
+        _gameState = gameState.gameOver;
+
+
+        // GemMover.DestroyGem();
+        // Time.timeScale = 0;
 
     }
+
+    public void onReload(){
+        // Debug.Log("Nut da duoc click!");
+
+    }
+
+
 }

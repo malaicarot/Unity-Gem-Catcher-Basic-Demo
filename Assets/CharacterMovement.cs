@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+
+    public ScoreManager _ScoreManager;
+
+
+
+
     public float speed = 5.0f;
     private Animator animator;
 
@@ -14,6 +20,14 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
+
+         if(_ScoreManager._gameState == gameState.gameOver){
+
+            return;
+            
+        }
+
+
         float moveHorizontal = Input.GetAxis("Horizontal");
         bool isMoving = moveHorizontal != 0; // khai báo biến isMoving
         animator.SetBool("isMoving", isMoving);
