@@ -21,8 +21,7 @@ public class GemMover : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) //other chính là thông tin của bất kỳ collider nào va chạm với collider này
     {
-        // Debug.Log("Phát hiện va chạm giữ viên ngọc này và một game object collider khác!");
-        // Debug.Log("đang xử lý va chạm...");
+
         if (other.gameObject.CompareTag("Player"))
         {
             //Khai báo biến tên audioSource để gán thông tin và các hàm của audio component từ lệnh other.GetComponent<AudioSource>()
@@ -34,23 +33,22 @@ public class GemMover : MonoBehaviour
             if (gameObject.CompareTag("BlueGem"))
             {
                 ScoreManager.AddScore(1);
+                Destroy(gameObject);
 
             }
             else if (gameObject.CompareTag("GreenGem"))
             {
                 ScoreManager.AddScore(2);
+                Destroy(gameObject);
 
             }
             else if (gameObject.CompareTag("BlackGem"))
             {
                 ScoreManager.AddScore(-1);
+                Destroy(gameObject);
 
             }
 
-            // Debug.Log(gameObject);
-            // Debug.Log("viên ngọc đã va chạm với game object có nhãn player");
-            Destroy(gameObject);
-            // Debug.Log("đã xóa viên ngọc này ");
         }
         else if (other.gameObject.CompareTag("Ground"))
         {
@@ -59,14 +57,9 @@ public class GemMover : MonoBehaviour
 
             //play âm thanh từ component đó
             audioSource.Play();
-            // Debug.Log("viên ngọc đã va chạm với game object có nhãn ground");
             Destroy(gameObject);
-            // Debug.Log("đã xóa viên ngọc này");
         }
     }
 
-    // public static void DestroyGem()
-    // {
-    //     speed = 0;
-    // }
+
 }

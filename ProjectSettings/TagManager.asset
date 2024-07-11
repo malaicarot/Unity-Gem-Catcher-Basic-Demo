@@ -9,6 +9,7 @@ TagManager:
   - BlueGem
   - GreenGem
   - BlackGem
+  - CloneGround
   layers:
   - Default
   - TransparentFX
