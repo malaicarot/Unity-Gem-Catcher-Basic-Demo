@@ -86,10 +86,20 @@ public class ScoreManager : MonoBehaviour
 
     }
 
-    public void OnReload(){
+    public void OnReload()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
-        Debug.Log("Nut da duoc click!");
+    }
+
+
+    public void OnQuit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_STANDALONE
+    UnityEngine.Application.Quit();
+#endif
 
     }
 
