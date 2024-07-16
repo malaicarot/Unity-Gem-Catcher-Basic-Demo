@@ -42,7 +42,7 @@ public class ScoreManager : MonoBehaviour
     {
 
         _gameState = gameState.playing;
-        remainingTime = 5f; //thời gian còn lại tại thời điểm bắt đầu bằng 30s (thời lượng của trò chơi)
+        remainingTime = 30f; //thời gian còn lại tại thời điểm bắt đầu bằng 30s (thời lượng của trò chơi)
         StartCoroutine(CountdownTimer());
         // là một phương thức nâng cao để gọi hàm CountdownTimer
         // nhằm cho phép đồng hồ chạy song song, tiếp tục đếm khi chuyển qua frame mới và kết thúc ở frame mới khi đạt đúng thời gian
@@ -88,6 +88,7 @@ public class ScoreManager : MonoBehaviour
 
     public void OnReload()
     {
+        score = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
@@ -100,8 +101,6 @@ public class ScoreManager : MonoBehaviour
 #elif UNITY_STANDALONE
     UnityEngine.Application.Quit();
 #endif
-
     }
-
 
 }

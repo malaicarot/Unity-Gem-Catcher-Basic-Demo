@@ -55,7 +55,7 @@ public class GemFallScript : MonoBehaviour
             float randomX = Random.Range(-8f, 8f); // Gem duoc sinh ngau nhien tren truc ngang man hinh
 
             // Tạo ra viên ngọc tại vị trí ở trên màn hình. 
-            Vector3 spawnPosition = new Vector3(randomX, 6f, 0); //Vector3(tọa độ x, tọa độ y và chiều sâu z)
+            Vector3 spawnPosition = new Vector3(randomX, 15f, 0); //Vector3(tọa độ x, tọa độ y và chiều sâu z)
 
 
             if (randomGem < 0)
