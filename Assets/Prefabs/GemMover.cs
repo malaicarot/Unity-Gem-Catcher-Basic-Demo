@@ -5,13 +5,7 @@ using UnityEngine;
 
 public class GemMover : MonoBehaviour
 {
-    // Start is called before the first frame update
-    // void Start()
-    // {
-
-    // }
-
-    // Update is called once per frame
+ 
     public static float speed = 5f;
 
     void Update()
@@ -45,6 +39,18 @@ public class GemMover : MonoBehaviour
             else if (gameObject.CompareTag("BlackGem"))
             {
                 ScoreManager.AddScore(-1);
+                Destroy(gameObject);
+
+            }
+              else if (gameObject.CompareTag("AddTime"))
+            {
+                ScoreManager.AddTime(5);
+                Destroy(gameObject);
+
+            }
+              else if (gameObject.CompareTag("SubTime"))
+            {
+                ScoreManager.AddTime(-3);
                 Destroy(gameObject);
 
             }

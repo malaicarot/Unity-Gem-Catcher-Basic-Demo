@@ -23,7 +23,7 @@ public class ScoreManager : MonoBehaviour
     // tạo một biến số điểm bắt đầu bằng 0 để lưu giá trị điểm của người chơi
     public static int score = 0; //static sẽ được giải thích sau trong chương c#
 
-    private float remainingTime;
+    public static float remainingTime; 
 
 
     public GameObject gameOverPanel;
@@ -36,6 +36,14 @@ public class ScoreManager : MonoBehaviour
     public static void AddScore(int amount) //(int amount) nghĩa là hàm sẽ chỉ nhận giá trị là integer, và giá trị này sẽ được gán vào biến có tên amount
     {
         score += amount; //tăng điểm theo giá trị của amount được truyền vào tại sự kiện gọi AddScore
+    }
+
+    // Ham tang thoi gian
+
+
+      public static void AddTime(int amount) //(int amount) nghĩa là hàm sẽ chỉ nhận giá trị là integer, và giá trị này sẽ được gán vào biến có tên amount
+    {
+        remainingTime += amount; //tăng thời gian theo giá trị của amount được truyền vào tại sự kiện gọi AddTime
     }
 
     void Start() // đếm giờ khi trò chơi bắt đầu
@@ -52,12 +60,15 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         // cập nhật điểm hiển thị trên UI
         scoreText.text = "Score: " + score + " | Time: " + Mathf.CeilToInt(remainingTime); // -> Score: 10 hoặc Score: 5 ...
         if (remainingTime <= 0)
         {
             GameOver();
         }
+        // StartCoroutine(CountdownTimer());
+       
     }
 
 
@@ -79,10 +90,6 @@ public class ScoreManager : MonoBehaviour
 
 
         _gameState = gameState.gameOver;
-
-
-        // GemMover.DestroyGem();
-        // Time.timeScale = 0;
 
     }
 
