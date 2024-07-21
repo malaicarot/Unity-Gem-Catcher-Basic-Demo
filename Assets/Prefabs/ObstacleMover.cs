@@ -5,11 +5,9 @@ using UnityEngine;
 public class ObstacleMover : MonoBehaviour
 {
 
-    // public static float speed = 6f;
-
     public float timer;
 
-    public float existTime = 4f;
+    public float existTime = 3f;
 
 
 
@@ -19,6 +17,7 @@ public class ObstacleMover : MonoBehaviour
 
         timer += Time.deltaTime;
 
+
         if (timer >= existTime)
         {
             Destroy(gameObject);
@@ -26,12 +25,7 @@ public class ObstacleMover : MonoBehaviour
             timer = 0;
 
         }
-        // transform.Translate(Vector3.up * speed * Time.deltaTime);
-
-        // if(existTime <= 0){
-        //     Destroy(gameObject);
-        // } 
-
-
+        
+        
     }
 }

@@ -10,6 +10,8 @@ TagManager:
   - GreenGem
   - BlackGem
   - CloneGround
+  - AddTime
+  - SubTime
   layers:
   - Default
   - TransparentFX
