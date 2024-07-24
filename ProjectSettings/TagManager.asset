@@ -12,6 +12,7 @@ TagManager:
   - CloneGround
   - AddTime
   - SubTime
+  - SpeedItems
   layers:
   - Default
   - TransparentFX

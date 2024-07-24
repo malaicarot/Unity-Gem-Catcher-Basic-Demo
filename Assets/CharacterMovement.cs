@@ -27,6 +27,10 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private Animator animator;
     public Rigidbody2D rb;
 
+    public float timer;
+
+    public float timeForSpeedUp = 8f;
+
 
     private bool isGrounded;
 
@@ -40,6 +44,15 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
+
+        timer += Time.deltaTime;
+
+        if (timer >= timeForSpeedUp)
+        {
+            speed = 5.0f;
+            timer = 0;
+
+        }
 
         if (_ScoreManager._gameState == gameState.gameOver)
         {
@@ -76,11 +89,13 @@ public class CharacterMovement : MonoBehaviour
 
         }
 
-        if(Input.GetButtonDown("Jump")){
+        if (Input.GetButtonDown("Jump"))
+        {
             jumpCount++;
         }
 
-        if(isGrounded){
+        if (isGrounded)
+        {
             jumpCount = 0;
         }
 

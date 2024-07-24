@@ -56,7 +56,6 @@ public class NewBehaviourScript : MonoBehaviour
             Vector3 spawnPosition = new Vector3(randomX, 0.03f, 0); // Vị trí xuất hiện đầu tiên của chướng ngại là dưới mặt đất
 
             GameObject spawnerWood = Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);
-            Debug.Log(spawnPosition);
 
            StartCoroutine(RiseObstacle(spawnerWood));
 
@@ -72,8 +71,6 @@ public class NewBehaviourScript : MonoBehaviour
 
         Vector3 targetPosition = new Vector3(obstacle.transform.position.x, 1.22f, obstacle.transform.position.z); // vị trí chướng ngại sẽ là ở trên mặt đất
 
-        Debug.Log(targetPosition);
-
 
         while (obstacle.transform.position != targetPosition) // nếu chướng ngại còn ở dưới mặt đất => di chuyển lên
         {
@@ -86,8 +83,6 @@ public class NewBehaviourScript : MonoBehaviour
         yield return new WaitForSeconds(spawnInterval);
 
         Destroy(obstacle);
-
-
     }
 
 }
