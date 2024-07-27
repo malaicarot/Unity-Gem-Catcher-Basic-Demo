@@ -625,6 +625,8 @@ MonoBehaviour:
   speed: 5
   animator: {fileID: 611757773}
   rb: {fileID: 611757776}
+  timer: 0
+  timeForSpeedUp: 10
 --- !u!95 &611757773
 Animator:
   serializedVersion: 5
@@ -707,7 +709,7 @@ Transform:
   m_GameObject: {fileID: 611757771}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 1.11, z: 0}
+  m_LocalPosition: {x: 0.05, y: 1.7, z: 0}
   m_LocalScale: {x: 5, y: 5.1499996, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -772,7 +774,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.003618583, y: -0.004792832}
+  m_Offset: {x: -0.0009080246, y: 0.00047064573}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -783,7 +785,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3047, y: 0.3062203}
+  m_Size: {x: 0.22337814, y: 0.19568567}
   m_EdgeRadius: 0
 --- !u!82 &611757778
 AudioSource:
@@ -1389,6 +1391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 986156047}
   - component: {fileID: 986156048}
+  - component: {fileID: 986156049}
   m_Layer: 0
   m_Name: SpeedItemsSpawner
   m_TagString: Untagged
@@ -1440,7 +1443,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1456,6 +1459,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &986156049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986156045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e7483f75d1d4c4985a779916635cac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedItems: {fileID: 2021100311119323481, guid: b934020c26e474d4da0b80797e35b6e8, type: 3}
+  spawnInterval: 5
+  speedIncrease: 2
+  _ScoreManager: {fileID: 366505393}
 --- !u!1 &1293659648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,7 +1843,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.22761202, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1835,7 +1854,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.54477596, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1655439556
 GameObject:
@@ -2243,7 +2262,7 @@ Transform:
   m_GameObject: {fileID: 1789302020}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0505, z: 0}
+  m_LocalPosition: {x: -0.02, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2281,7 +2300,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.023488998, y: -0.13655281}
+  m_Offset: {x: 0.023488998, y: 0.06245148}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2292,7 +2311,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 32.04721, y: 1.0226479}
+  m_Size: {x: 32.04721, y: 1.4206564}
   m_EdgeRadius: 0
 --- !u!82 &1789302024
 AudioSource:
